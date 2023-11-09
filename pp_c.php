@@ -44,6 +44,7 @@
         <img src="images\body.jpg" alt="Cover Photo">
     </div>
     <?php
+    session_start();
 // Establish a database connection (you need to provide database credentials here)
 $servername = "localhost";
 $username = "root";
@@ -143,8 +144,16 @@ $conn->close();
 <!-- Modal for booking -->
 <div id="booking-modal" class="modal">
     <div class="modal-content" style=" height: 50%;">
-        <p id="text">Do you want to book Provider Name?</p>
-        <button id="proceed-to-pay-button">Proceed to Pay</button>
+    <?php  
+        if(isset($_SESSION['useremail_c'])){
+        echo '<p id="text">Do you want to book this service?</p>' ;
+        echo '<button id="proceed-to-pay-button">Proceed to Pay</button>';
+    }else{
+        echo '<p id="text">Opps....</p>';
+        echo '<p id="text">You must be logged in as a customer to book this service..</p>';
+        echo '<a href="c_log.html"  ><button id="open-login-popup-button">Login as Customer</button></a>';
+        }
+        ?>
     </div>
 </div>
 

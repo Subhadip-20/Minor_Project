@@ -58,13 +58,13 @@ class SignupHandler {
         if ($success) {
             mysqli_commit($this->conn);
             echo '<script>
-            alert("Registration successful!");
+            alert("Account created successfully. Please login kindly !");
             window.location.href = "c_log.html";
         </script>';
         } else {
             mysqli_rollback($this->conn);
             echo '<script>
-            alert("Registration failed. Please try again!");
+            alert("Registration failed. Please try again !");
             window.location.href = "c_log.html";
         </script>';
         }

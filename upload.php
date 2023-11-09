@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Database connection information
 $host = 'localhost';
 $username = 'root';
@@ -13,7 +14,7 @@ if ($connection->connect_error) {
 }
 
 if (isset($_FILES['image'])) {
-    $c_id = 3; // Replace with your actual s_id (e.g., retrieved from session)
+    $c_id = $_SESSION['id_c'] ; // Replace with your actual s_id (e.g., retrieved from session)
     $image = $_FILES['image']['tmp_name'];
 
     // Read the image file
@@ -29,7 +30,7 @@ if (isset($_FILES['image'])) {
             
     
     if ($connection->query($sql) === TRUE) {
-        echo "Image uploaded and saved to the database successfully.";
+        echo "<script>alert('Image uploaded and saved to the database successfully.');window.location.href='cp.php'</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $connection->error;
     }

@@ -62,12 +62,12 @@ class ProviderSignupHandler {
         $sprovider_query = "INSERT INTO sprovider (p_password, p_name, contact_no, email_id, add_id, s_id , fees) VALUES ('$hashedPassword','$p_name', '$contact_no', '$email_id', '$add_id', '$s_id' , '$fees')";
         if ($this->conn->query($sprovider_query) === TRUE) {
             echo '<script>
-            alert("Registration successful!");
+            alert("Account created successfully. Please login kindly !");
             window.location.href = "p_log.html";
             </script>';
         } else {
             echo '<script>
-            alert("Error inserting sprovider. Please try again ");
+            alert("Registration failed. Please try again ! ");
             window.location.href = "p_log.html";
             </script>' . $this->conn->error;
         }

@@ -109,7 +109,7 @@ if ($result->num_rows > 0) {
         $s_name = $row['s_name'];
         
         // Retrieve provider details (including fees) for the service
-        $sql_providers = "SELECT p_id, p_name, fees FROM sprovider WHERE s_id = $s_id";
+        $sql_providers = "SELECT p_id, p_name, fees, image1 FROM sprovider WHERE s_id = $s_id";
         $result_providers = $conn->query($sql_providers);
 
         echo "<div class='service'>";
@@ -119,9 +119,16 @@ if ($result->num_rows > 0) {
             $p_id = $provider_row['p_id'];
             $p_name = $provider_row['p_name'];
             $fees = $provider_row['fees'];
-
+            $imageData= $provider_row['image1'];
             echo '<div class="provider">';
-            echo '<img src="images/provider.png" alt="Provider Image">';
+            if (!empty($imageData)) {
+                $base64Image = base64_encode($imageData);
+                $imageSrc = 'data:image/png;base64,' . $base64Image;
+                echo '<img id="profile-photo" src="' . $imageSrc . '" alt="Provider Image">';
+            } else {
+                // Display a default profile image
+                echo '<img id="profile-photo" src="images/default_profile_image.png" alt="Default Profile Image">';
+            }
             echo '<div class="provider-info">';
             echo "<h2 class='provider-name'><a href='pp_c.php?p_id=$p_id'>$p_name</a></h2>";
             echo '<div class="fees">Fees: Rs. ' . $fees . '</div>';

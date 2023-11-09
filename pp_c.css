@@ -180,10 +180,19 @@ table th, table td {
 
 #generatePdfButton{
     position: relative;
-    left: 30%;
+    left: 38%;
     width: 180px;
     height: 40px;
     border-radius: 2rem;
 
 }
 
+#open-login-popup-button{
+    position: relative;
+    left: 30%;
+    top: 150px;
+    width: 180px;
+    height: 40px;
+    border-radius: 2rem;
+
+}
