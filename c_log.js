@@ -17,3 +17,6 @@ toggle_btn.forEach(btn => {
         main.classList.toggle("sign-up-mode");
     });
 })
+document.querySelector( "#retrobg-sun" ).onclick = () => {
+    document.querySelector( "#retrobg" ).classList.toggle( "retrobg-shutdown" );
+  };
