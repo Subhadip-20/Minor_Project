@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+ 
+#logo p{
+    margin-left: 38%;
+  font-size: xx-large;
+  left: 50%;
+}
+/* Add styles for the navbar buttons */
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.nav-button:hover {
+    background-color: #2980b9;
+}
+
+.choose-button{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    position: absolute;
+    top: 570px;
+    left: 130px;
+}
+
+.choose-button:hover{
+    background-color: #2980b9;
+}
+
+/* Add this CSS to make the file input visually hidden */
+#customFile1 {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    pointer-events: none;
+}
+
+
+.top-left {
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.top-right {
+    position: absolute;
+    top: 25px;
+    right: 0;
+}
+.cover-photo {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.cover-photo img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-info img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 350px; /* Adjust this value to position the profile photo as desired. */
+    left: 200px;  /* Adjust this value to horizontally center the profile photo. */
+    transform: translateX(-50%);
+}
+
+
+.profile-details {
+    margin-bottom: 10px;
+    position: absolute;
+    top: 400px; /* Adjust this value to position the profile photo as desired. */
+    left: 330px;  /* Adjust this value to horizontally center the profile photo. */
+}
+
+#logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
