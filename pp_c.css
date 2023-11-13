@@ -8,7 +8,6 @@ body {
     section{
     height:100%;
     width:100%;
-    color: #fff;
       position:absolute ;  background:radial-gradient(#333,#000);
     }
     .leaf{
@@ -171,7 +170,7 @@ body {
     }
     
 .invoice {
-    background-color: #fff;
+    background-color: #000;
     width: 95%;
     margin: 0 auto;
     padding: 05px;
@@ -229,6 +228,7 @@ table th, table td {
     position: relative;
     text-align: center;
     top: 60px;
+    /* color: black; */
 }
 
 #generatePdfButton{
