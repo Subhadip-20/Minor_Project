@@ -4,6 +4,7 @@ body {
     overflow:hidden;
     font-family: Arial, sans-serif;
     background-color:black;
+    color: rgb(214, 204, 204);
     }
     section{
     height:100%;
@@ -170,7 +171,7 @@ body {
     }
     
 .invoice {
-    background-color: #000;
+    background-color: #ffffff;
     width: 95%;
     margin: 0 auto;
     padding: 05px;

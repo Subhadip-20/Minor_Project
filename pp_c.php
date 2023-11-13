@@ -20,7 +20,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            color: #000;
+            color: black;
         }
 
         .modal-content {
@@ -286,7 +286,29 @@ if ($result->num_rows > 0) {
     </div>
 </div>
 </section>
+<?php
+$book_query= "INSERT INTO book (c_id, p_id) VALUES ('$c_id','$p_id')";
+$conn->query($book_query);
+$b_id=$conn->insert_id;
+
+date_default_timezone_set('Asia/Kolkata');
+
+// Get the current time
+$currentDate = date('Y-m-d');
+
+?>
 <script>
+    var providerName = "<?php echo $p_name; ?>";
+    var customerName = "<?php echo $c_name; ?>";
+    var providerEmail = "<?php echo $email; ?>";
+    var customerEmail = "<?php echo $c_email; ?>";
+    var providerNumber = "<?php echo $contact; ?>";
+    var customerNumber = "<?php echo $c_contact; ?>";
+    var serviceName = "<?php echo $s_name; ?>";
+    var serviceFees = "<?php echo $fees; ?>";
+    var bookId = "<?php echo $b_id; ?> ";
+    var total1 = "<?php echo $increasedNumber; ?>";
+    var date = "<?php echo $currentDate; ?>";
     window.jsPDF = window.jspdf.jsPDF;
         // Function to generate and download the PDF invoice
         // Function to generate and download the PDF invoice
@@ -296,7 +318,7 @@ function generatePDF() {
     // Create a data array for your table
     const data = [
         ["Service", "Price", "Total"],
-        ["Service 1", "$50.00", "$100.00"]
+        [serviceName, serviceFees, total1]
     ];
 
     // Add content to the PDF (invoice details)
@@ -311,36 +333,36 @@ pdf.text("Invoice", xPosition, 10);
 
     // Customize and add content as needed
     pdf.setFontSize(12);
-    pdf.text("Customer Information:", 10, 20);
-    pdf.text("Name : John Doe", 10, 30);
-    pdf.text("Email : john.doe@example.com", 10, 40);
-    pdf.text("Phone : +1 123-456-7890", 10, 50);
+    pdf.text("Customer Information:-", 10, 20);
+    pdf.text("Name : "+customerName , 10, 30);
+    pdf.text("Email : "+customerEmail , 10, 40);
+    pdf.text("Phone : "+customerNumber , 10, 50);
 
-    pdf.text("Provider Information:", 130, 20);
-    pdf.text("Name : John Doe", 130, 30);
-    pdf.text("Email : john.doe@example.com", 130, 40);
-    pdf.text("Phone : +1 123-456-7890", 130, 50);
+    pdf.text("Provider Information:-", 130, 20);
+    pdf.text("Name : "+providerName , 130, 30);
+    pdf.text("Email : "+providerEmail , 130, 40);
+    pdf.text("Phone : "+providerNumber , 130, 50);
 
-    pdf.text("Order Information :", 10, 70);
-    pdf.text("Order ID : #123456", 10, 80);
-    pdf.text("Order Date : 2023-11-06", 10, 90);
+    pdf.text("Order Information :-", 10, 70);
+    pdf.text("Order ID : "+bookId , 10, 80);
+    pdf.text("Order Date :"+date , 10, 90);
 
-    pdf.text("Invoice Details:", 10, 110);
+    pdf.text("Invoice Details:-", 10, 110);
     // Create the table using the autoTable plugin
     pdf.autoTable({
         startY: 120,
         head: [["Service", "Price", "Total"]],
         body: [
-            ["Service 1", "$50.00", "$100.00"]
+            [serviceName, "Rs. "+serviceFees, "Rs. "+total1]
             // You can add more rows here as needed
         ]
     });
 
     // Calculate the total
-    const total = 190.00;
+    const total = total1;
 
     // Add the total
-    pdf.text(`Total: $${total.toFixed(2)}`, 10, pdf.autoTable.previous.finalY + 10);
+    pdf.text(`Total: Rs. `+ total1, 10, pdf.autoTable.previous.finalY + 10);
 
     // Save the PDF with a specific name (e.g., invoice.pdf)
     pdf.save("invoice.pdf");
@@ -348,7 +370,7 @@ pdf.text("Invoice", xPosition, 10);
 // Function to display the alert message
     function showAlert() {
         // Retrieve the provider's name from PHP
-        var providerName = "<?php echo $p_name; ?>";
+        // var providerName = "<?php echo $p_name; ?>";
 
         // Construct the alert message
         var alertMessage = "Thanks for booking " + providerName + " . You can share your experience with us through our Contact Us page.";
