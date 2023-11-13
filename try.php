@@ -1,25 +1,12 @@
-<?php
-    session_start();
-       
-    if (!isset($_SESSION['useremail_p'])) {
-        // Redirect to the home page
-        header("Location:homepage.php");
-        
-    }
-
-    
-    
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>
           Your Profile
       </title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-      <link href="pp.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans&display=swap" rel="stylesheet"> 
+      <link href="try.css" rel="stylesheet">
     </head>
     <body>
         

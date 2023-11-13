@@ -36,11 +36,13 @@
     }
 
     .search-button {
-      background: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
+      background: #fff;
+      font-size: 20px;
       cursor: pointer;
+    }
+    .logo-img {
+        width: 40px;
+        height: auto;
     }
   </style>
  
@@ -48,8 +50,8 @@
 <body>
 <div class="background-image"></div>    
 <header>
-
-<a href="#" class="logo">Home Solutions</a>
+<img src="images/logo.ico" alt="Logo"  class="logo-img" >
+<p class="logo">Home Solutions</p>
     <div id="menu-bar" class="fas fa-bars"></div>
 <form action="search.php" method="GET">
     <div class="search-container">

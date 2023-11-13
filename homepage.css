@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap');
 
+
 *{
   font-family: 'Nunito', sans-serif;
   margin:0; padding:0;
@@ -63,10 +64,29 @@ header{
   background-color: #fff;
 }
 
+@keyframes colorChange {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
 header .logo{
-  font-size: 2.5rem;
-  color:#666;
-  font-weight: bolder;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Courgette', cursive;
+  background: linear-gradient(45deg, #262626, #1abc9c, #8e44ad);
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: colorChange 5s infinite;
 }
 
 
@@ -154,12 +174,32 @@ header .search-bar input[type="text"] {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background: #ffcba4;
 	height: 520px;
 	width: 400px;
 	border-radius: 5px;
 	box-shadow: 0 0 10px #000;
+  background: rgba(75, 75, 250, 0.3);
+  background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size: cover;
+    -webkit-animation: slidein 100s;
+    animation: slidein 100s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
+@-webkit-keyframes slidein {
+  from { background-position: top; background-size: 3000px; }
+  to { background-position: -100px 0px; background-size: 2750px; }
+}
+
+@keyframes slidein {
+  from { background-position: top; background-size: 3000px; }
+  to { background-position: -100px 0px; background-size: 2750px; }
+}
+
 
 .popup h2 {
   text-align: center;
@@ -218,26 +258,30 @@ header .search-bar input[type="text"] {
 
 
 .customer-button::before{
-  content: "\2714";
 	font-size: 30px;
   font-weight: bold;
 	opacity: 0;
 }
 
 .provider-button::before {
-	content: "\2714";
 	font-size: 30px;
   font-weight: bold;
 	opacity: 0;
 }
 
 .popup-container .popup .customer-button:hover{
-  background-color: #c46210;
+  background: none ;
+  background-image: url(images/customer.png);
+  background-size: 192px;
+  background-position: center;
 	transform: scale(1.05);
 }
 
 .popup-container .popup .provider-button:hover {
-	background-color: #c46210;
+	background: none ;
+  background-image: url(images/provider.png);
+  background-size: 192px;
+  background-position: center;
 	transform: scale(1.05);
 }
 

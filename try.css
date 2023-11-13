@@ -1,0 +1,281 @@
+body {
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:black;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+section{
+height:100%;
+width:100%;
+color: #fff;
+  position:absolute ;  background:radial-gradient(#333,#000);
+}
+.leaf{
+    position:absolute ;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+.leaf div{
+position:absolute ;
+display:block ;
+}
+.leaf div:nth-child(1){
+    left:20%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-2s;
+
+}
+.leaf div:nth-child(2){
+    left:70%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-4s;
+}
+.leaf div:nth-child(3){
+    left:10%; 
+    animation:fall 20s linear infinite ;
+    animation-delay:-7s;
+    
+}
+.leaf div:nth-child(4){
+    left:50%; 
+   animation:fall 18s linear infinite ; 
+   animation-delay:-5s;
+}
+.leaf div:nth-child(5){
+    left:85%; 
+    animation:fall 14s linear infinite ;
+    animation-delay:-5s;
+}
+.leaf div:nth-child(6){
+    left:15%; 
+    animation:fall 16s linear infinite ;
+    animation-delay:-10s;
+}
+.leaf div:nth-child(7){
+    left:90%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-4s;
+}
+
+@keyframes fall{
+    0%{
+        opacity:1;
+        top:-10%;
+        transform:translateX (20px) rotate(0deg);
+    }
+    20%{
+        opacity:0.8;
+        transform:translateX (-20px) rotate(45deg);
+    }
+    40%{
+
+        transform:translateX (-20px) rotate(90deg);
+    }
+    60%{
+        
+       transform:translateX (-20px) rotate(135deg); 
+    }
+    80%{
+    
+        transform:translateX (-20px) rotate(180deg);
+    }
+    100%{
+        
+        top:110%;
+        transform:translateX (-20px) rotate(225deg);
+    }
+    }
+.leaf1{
+    transform: rotateX(180deg);
+}
+h2{
+    position:absolute ;
+    top:40%;
+    width:100%;
+    font-family: 'Courgette', cursive;
+    font-size:4em;
+    text-align:center;
+    transform:translate ;
+    color:#fff;
+    transform:translateY (-50%);
+}
+
+
+
+
+
+
+header h1 {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Courgette', cursive;
+}
+ 
+
+/* Add styles for the navbar buttons */
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.nav-button:hover {
+    background-color: #2980b9;
+}
+
+.choose-button{
+    padding: 10px 20px;
+    background-color: #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    position: absolute;
+    top: 380px;
+    left: 45%;
+}
+
+.choose-button:hover{
+    background-color: #2980b9;
+}
+
+/* Add this CSS to make the file input visually hidden */
+#customFile1 {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    pointer-events: none;
+}
+
+
+.top-left {
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.top-right {
+    position: absolute;
+    top: 25px;
+    right: 0;
+}
+
+.profile-info img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.profile-details {
+    position: absolute;
+    top: 400px;
+    margin: 0 100px;
+}
+
+#logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.invoice {
+    background-color: #fff;
+    width: 95%;
+    margin: 0 auto;
+    padding: 05px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+    text-align: center;
+}
+
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.customer-info,
+.order-info {
+    width: 45%;
+}
+
+.invoice-table {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.invoice-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#proceed-to-pay-button{
+    position: relative;
+    left: 30%;
+    top: 190px;
+    width: 180px;
+    height: 40px;
+    border-radius: 2rem;
+
+}
+
+#text{
+    font-size:x-large;
+    position: relative;
+    text-align: center;
+    top: 60px;
+}
+
+#generatePdfButton{
+    position: relative;
+    left: 38%;
+    width: 180px;
+    height: 40px;
+    border-radius: 2rem;
+
+}
+
+#open-login-popup-button{
+    position: relative;
+    left: 30%;
+    top: 150px;
+    width: 180px;
+    height: 40px;
+    border-radius: 2rem;
+
+}

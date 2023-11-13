@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Profile</title>
     <link rel="stylesheet" type="text/css" href="pp_c.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <?php
+    session_start();
+    ?>
     <style>
         .modal {
             display: none;
@@ -30,21 +33,50 @@
     </style>
 </head>
 <body>
-    <header>
+    <section>
+  </div>
+     <div class="leaf">
+     <div>  <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+      <div>  <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+      <div><img  src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+       <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+     <div>   <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+     <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></div>
+            
+     </div>
+     
+     <div class="leaf leaf1">
+     <div>  <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+      <div>  <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+      <div><img  src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+       <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+     <div>   <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+     <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></div>
+            
+     </div>
+     
+     <div class="leaf leaf2">
+     <div>  <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+      <div>  <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+      <div><img  src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+
+       <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+     <div>   <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+     <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></div>
+            
+     </div>
+     <header>
         <div class="top-left">
             <a href="homepage1.php" id="home-button" class="nav-button">Home</a>
         </div>
         <p id="logo"><h1>Home Solution</h1></p>
-        <!-- <div class="top-right">
-            <a href="homepage.php" id="logout-button" class="nav-button">Log Out</a>
-        </div> -->
     </header>
     
-    <div class="cover-photo">
-        <img src="images\body.jpg" alt="Cover Photo">
-    </div>
     <?php
-    session_start();
+    // session_start();
 // Establish a database connection (you need to provide database credentials here)
 $servername = "localhost";
 $username = "root";
@@ -102,7 +134,7 @@ if ($result->num_rows > 0) {
 
     echo '</div>';
     echo '<div class="profile-details">';
-    echo "<h1>$p_name</h1>";
+    echo "<h1><b>Name :</b> $p_name</h1>";
     echo "<p><b>Service :</b> $s_name</p>";
     echo "<p><b>Fees :</b>    Rs. $fees</p>";
     echo "<p><b>Email :</b>   $email</p>";
@@ -208,6 +240,7 @@ $conn->close();
     <button id="generatePdfButton">Generate PDF</button>
     </div>
 </div>
+</section>
 <script>
     window.jsPDF = window.jspdf.jsPDF;
         // Function to generate and download the PDF invoice
@@ -267,9 +300,23 @@ pdf.text("Invoice", xPosition, 10);
     // Save the PDF with a specific name (e.g., invoice.pdf)
     pdf.save("invoice.pdf");
 }
+// Function to display the alert message
+    function showAlert() {
+        // Retrieve the provider's name from PHP
+        var providerName = "<?php echo $p_name; ?>";
 
-// Attach an event listener to the "Generate PDF" button
-document.getElementById("generatePdfButton").addEventListener("click", generatePDF);
+        // Construct the alert message
+        var alertMessage = "Thanks for booking " + providerName + " . You can share your experience with us through our Contact Us page.";
+
+        // Display the alert
+        alert(alertMessage);
+    }
+
+    // Attach an event listener to the "Generate PDF" button
+    document.getElementById("generatePdfButton").addEventListener("click", function () {
+        generatePDF(); // Call the existing PDF generation function
+        showAlert(); // Call the alert function
+    });
 
         
     </script>

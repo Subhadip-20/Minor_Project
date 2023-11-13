@@ -62,10 +62,29 @@ header{
   background-color: #fff;
 }
 
+@keyframes colorChange {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
 header .logo{
-  font-size: 2.5rem;
-  color:#666;
-  font-weight: bolder;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Courgette', cursive;
+  background: linear-gradient(45deg, #262626, #1abc9c, #8e44ad);
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: colorChange 5s infinite;
 }
 
 header .navbar a{
@@ -101,24 +120,20 @@ header .search-bar input[type="text"] {
   font-size: 16px;
 }
 
-#search-button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  right: 37px;
-  top: 3px;
-  color: #ccc;
-  font-size: 20px;
-}
+
 
 .profile-icon {
   position: absolute;
-  top: 20%; /* Adjust the top position as needed */
-  right: 60px; /* Adjust the right position as needed */
-  font-size: 35px; /* Increase the font size to 24 pixels or adjust as needed */
+  top: 15%;
+  right: 60px;
+  font-size: 40px;
+  background-color: #fff; /* Use a beautiful background color */
+  color: #004f98; /* Set text color to white or a contrasting color */
+  cursor: pointer;
 }
+
+
+
 
 .background-image {
   position: fixed;

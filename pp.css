@@ -1,120 +1,181 @@
 body {
+    margin:0;
+    padding:0;
+    overflow:hidden;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #f0f0f0;
-}
-
-/* Header styles */
-header {
-    text-align: center;
-    padding: 10px 0;
-}
-
-header h1 {
-    margin: 0;
-}
- 
-#logo p{
-    margin-left: 38%;
-  font-size: xx-large;
-  left: 50%;
-}
-/* Add styles for the navbar buttons */
-.nav-button {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
+    background-color:black;
+    }
+    section{
+    height:100%;
+    width:100%;
     color: #fff;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
-}
-
-.nav-button:hover {
-    background-color: #2980b9;
-}
-
-.choose-button{
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
-    position: absolute;
-    top: 570px;
-    left: 130px;
-}
-
-.choose-button:hover{
-    background-color: #2980b9;
-}
-
-/* Add this CSS to make the file input visually hidden */
-#customFile1 {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    pointer-events: none;
-}
-
-
-.top-left {
-    position: absolute;
-    top: 25px;
-    left: 0;
-}
-
-.top-right {
-    position: absolute;
-    top: 25px;
-    right: 0;
-}
-.cover-photo {
-    width: 100%;
-    max-height: 300px;
-    overflow: hidden;
-}
-
-.cover-photo img {
-    width: 100%;
-    height: auto;
-}
-
-.profile-info img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fff;
-    margin-bottom: 10px;
-    position: absolute;
-    top: 350px; /* Adjust this value to position the profile photo as desired. */
-    left: 200px;  /* Adjust this value to horizontally center the profile photo. */
-    transform: translateX(-50%);
-}
-
-
-.profile-details {
-    margin-bottom: 10px;
-    position: absolute;
-    top: 400px; /* Adjust this value to position the profile photo as desired. */
-    left: 330px;  /* Adjust this value to horizontally center the profile photo. */
-}
-
-#logout-button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-
+      position:absolute ;  background:radial-gradient(#333,#000);
+    }
+    .leaf{
+        position:absolute ;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+    }
+    .leaf div{
+    position:absolute ;
+    display:block ;
+    }
+    .leaf div:nth-child(1){
+        left:20%; 
+        animation:fall 15s linear infinite ;
+        animation-delay:-2s;
+    
+    }
+    .leaf div:nth-child(2){
+        left:70%; 
+        animation:fall 15s linear infinite ;
+        animation-delay:-4s;
+    }
+    .leaf div:nth-child(3){
+        left:10%; 
+        animation:fall 20s linear infinite ;
+        animation-delay:-7s;
+        
+    }
+    .leaf div:nth-child(4){
+        left:50%; 
+       animation:fall 18s linear infinite ; 
+       animation-delay:-5s;
+    }
+    .leaf div:nth-child(5){
+        left:85%; 
+        animation:fall 14s linear infinite ;
+        animation-delay:-5s;
+    }
+    .leaf div:nth-child(6){
+        left:15%; 
+        animation:fall 16s linear infinite ;
+        animation-delay:-10s;
+    }
+    .leaf div:nth-child(7){
+        left:90%; 
+        animation:fall 15s linear infinite ;
+        animation-delay:-4s;
+    }
+    
+    @keyframes fall{
+        0%{
+            opacity:1;
+            top:-10%;
+            transform:translateX (20px) rotate(0deg);
+        }
+        20%{
+            opacity:0.8;
+            transform:translateX (-20px) rotate(45deg);
+        }
+        40%{
+    
+            transform:translateX (-20px) rotate(90deg);
+        }
+        60%{
+            
+           transform:translateX (-20px) rotate(135deg); 
+        }
+        80%{
+        
+            transform:translateX (-20px) rotate(180deg);
+        }
+        100%{
+            
+            top:110%;
+            transform:translateX (-20px) rotate(225deg);
+        }
+        }
+    .leaf1{
+        transform: rotateX(180deg);
+    }
+     
+    header h1 {
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Courgette', cursive;
+    }
+     
+    
+    /* Add styles for the navbar buttons */
+    .nav-button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #3498db;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    
+    .nav-button:hover {
+        background-color: #2980b9;
+    }
+    
+    .choose-button{
+        padding: 10px 20px;
+        background-color: #3498db;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+        position: absolute;
+        top: 380px;
+        left: 45%;
+    }
+    
+    .choose-button:hover{
+        background-color: #2980b9;
+    }
+    
+    /* Add this CSS to make the file input visually hidden */
+    #customFile1 {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        pointer-events: none;
+    }
+    
+    
+    .top-left {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+    
+    .top-right {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+    
+    .profile-info img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #fff;
+        margin-bottom: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    
+    .profile-details {
+        position: absolute;
+        top: 400px;
+        margin: 0 100px;
+    }
+    
+    #logout-button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    

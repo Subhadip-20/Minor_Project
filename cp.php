@@ -17,9 +17,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Profile</title>
     <link rel="stylesheet" type="text/css" href="cp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
 </head>
 <body>
-    <header>
+<section>
+  </div>
+     <div class="leaf">
+     <div>  <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+      <div>  <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+      <div><img  src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+       <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+     <div>   <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+     <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></div>
+            
+     </div>
+     
+     <div class="leaf leaf1">
+     <div>  <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+      <div>  <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+      <div><img  src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+       <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+     <div>   <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+     <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></div>
+            
+     </div>
+     
+     <div class="leaf leaf2">
+     <div>  <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+      <div>  <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+      <div><img  src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+
+       <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+     <div>   <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+     <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></div>
+            
+     </div>
+     <header>
         <div class="top-left">
             <a href="homepage1.php" id="home-button" class="nav-button">Home</a>
         </div>
@@ -65,7 +101,7 @@ if ($result) {
     echo '</div>';
     
     echo '<div class="profile-details">';
-    echo '<h1>' . $row['c_name'] . '</h1>';
+    echo '<h1><b>Name :</b> ' . $row['c_name'] . '</h1>';
     echo '<p><b>Email :</b> ' . $row['email_id'] . '</p>';
     echo '<p><b>Address :</b> ' . $row['house_no'] . ', ' . $row['dist'] . ', ' . $row['city'] . ', ' . $row['add_state'] . ', ' . $row['country'] . ' - ' . $row['pin'] . '</p>';
     echo '</div>';
@@ -78,23 +114,7 @@ mysqli_close($conn);
 
         
     ?>
-    <div class="cover-photo">
-        <img src="images\body.jpg" alt="Cover Photo">
-     </div>
-   <!-- <div class="profile-info">
-        <img id="profile-photo" src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg" alt="example placeholder" />
-        <form action="upload.php" method="POST" enctype="multipart/form-data" id="imageForm">
-        <div class="choose-button">
-            <label for="customFile1">Choose file</label>
-            <input type="file"name="image" class="form-control d-none" id="customFile1" onchange="submitForm()">
-        </div>
-</form>
-    </div>
-    <div class="profile-details">
-        <h1>Your Name</h1>
-        <p><b>Email :</b> your.email@example.com</p>
-        <p><b>Address :</b> Your Address</p>
-    </div> -->
+   </section>
     <script>
         function submitForm() {
             document.getElementById('imageForm').submit();
