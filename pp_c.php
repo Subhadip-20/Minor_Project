@@ -92,9 +92,10 @@ if ($conn->connect_error) {
 
 // Get the provider ID from the URL parameter
 $p_id = $_GET['p_id'];
+$c_id = $_SESSION['id_c'];
 
 // Retrieve provider details including the image, service name, and address
-$sql = "SELECT sp.p_name, sp.s_id, sp.fees, sp.email_id, sp.image1, sp.add_id, s.s_name, a.country, a.add_state, a.city, a.dist, a.pin, a.house_no 
+$sql = "SELECT sp.p_name, sp.s_id,sp.contact_no, sp.fees, sp.email_id, sp.image1, sp.add_id, s.s_name, a.country, a.add_state, a.city, a.dist, a.pin, a.house_no 
         FROM sprovider sp
         JOIN services s ON sp.s_id = s.s_id
         JOIN addresss a ON sp.add_id = a.add_id
@@ -115,6 +116,7 @@ if ($result->num_rows > 0) {
     $pin = $row['pin'];
     $email = $row['email_id'];
     $house_no = $row['house_no'];
+    $contact=$row['contact_no'];
 
     // Retrieve the image data
     $imageData = $row['image1'];
@@ -149,7 +151,7 @@ if ($result->num_rows > 0) {
 }
 
 // Close the database connection
-$conn->close();
+// $conn->close();
 ?>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -199,21 +201,49 @@ $conn->close();
         </div>
         <div class="invoice-details">
             <div class="customer-info">
-                <h2>Customer Information</h2>
+                <?php
+
+                $sql = "SELECT c_name,email_id,contact_no FROM customer WHERE c_id = '$c_id' ";
+                $result1 = $conn->query($sql);
+
+            if ($result1->num_rows > 0){
+                $row1 = $result1->fetch_assoc();
+                $c_name=$row1['c_name'];
+                $c_email=$row1['email_id'];
+                $c_contact=$row1['contact_no'];
+            }
+                echo'<h2>Customer Information</h2>';
+                echo "<b>Name :</b> $c_name<br>";
+                echo "<b>Email :</b> $c_email<br>";
+                echo "<b>Phone :</b> $c_contact<br>";
+                ?>
+                <!-- <h2>Customer Information</h2>
                 <p>Name: John Doe</p>
                 <p>Email: john.doe@example.com</p>
-                <p>Phone: +1 123-456-7890</p>
+                <p>Phone: +1 123-456-7890</p> -->
             </div>
             <div class="provider-info">
-                <h2>Customer Information</h2>
+                <?php
+                    echo'<h2>Provider Information</h2>';
+                    echo "<b>Name :</b> $p_name<br>";
+                    echo "<b>Email :</b> $email<br>";
+                    echo "<b>Phone :</b> $contact<br>";
+                ?>
+                <!-- <h2>Customer Information</h2>
                 <p>Name: Lux Doe</p>
                 <p>Email: john.doe@example.com</p>
-                <p>Phone: +1 123-456-7890</p>
+                <p>Phone: +1 123-456-7890</p> -->
             </div>
             <div class="order-info">
-                <h2>Order Information</h2>
+            <?php
+                    echo'<h2>Order Information</h2>';
+                    echo "<b>Service Name :</b> $s_name<br>";
+                    echo "<b>Fees :</b> $fees<br>";
+                    // echo "<h1><b>Phone :</b> $contact</h1>"
+                ?>
+                <!-- <h2>Order Information</h2>
                 <p>Order ID: #123456</p>
-                <p>Order Date: 2023-11-06</p>
+                <p>Order Date: 2023-11-06</p> -->
             </div>
         </div>
         <div class="invoice-table">
@@ -227,15 +257,29 @@ $conn->close();
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Service 1</td>
+                        <?php
+                        $originalNumber = $fees; // Replace 100 with your original number
+                        $percentageIncrease = 18;
+                        
+                        $increasedNumber = $originalNumber + ($originalNumber * ($percentageIncrease / 100));
+
+                        echo "<td> $s_name</td>";
+                        echo "<td> $fees </td>";
+                        echo "<td> $increasedNumber </td>";
+
+                        ?>
+                        <!-- <td>Service 1</td>
                         <td>$50.00</td>
-                        <td>$100.00</td>
+                        <td>$100.00</td> -->
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="invoice-total">
-            <p>Total: $190.00</p>
+            <?php
+            echo "<p>Total: $increasedNumber </p>";
+            ?>
+            <!-- <p>Total: $190.00</p> -->
         </div>
     </div>
     <button id="generatePdfButton">Generate PDF</button>
