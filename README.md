@@ -1,4 +1,5 @@
 Project Name: Service Booking Webpage
+
 Overview
 Welcome to our Service Booking Webpage! This project aims to provide a user-friendly platform for people to book various services. Users can log in as either a customer or a service provider, explore the website, browse through different service categories, and connect with providers. Only logged-in customers have the privilege to book services.
 
