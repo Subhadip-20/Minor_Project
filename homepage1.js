@@ -14,17 +14,17 @@ window.onscroll = () => {
 
 
 /* contact form */
-document.addEventListener("DOMContentLoaded", function() {
-  const contactForm = document.getElementById("contact-form");
+// document.addEventListener("DOMContentLoaded", function() {
+//   const contactForm = document.getElementById("contact-form");
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    alert("Form submitted!");
-    contactForm.reset();
-  }
+//   function handleFormSubmit(event) {
+//     event.preventDefault();
+//     alert("Form submitted!");
+//     contactForm.reset();
+//   }
   
-  contactForm.addEventListener("submit", handleFormSubmit);
-});
+//   contactForm.addEventListener("submit", handleFormSubmit);
+// });
 // JavaScript for opening and closing feature popups
 document.addEventListener("DOMContentLoaded", function () {
     // Get references to the feature popups

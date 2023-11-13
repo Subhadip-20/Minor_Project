@@ -290,7 +290,7 @@ if ($result->num_rows > 0) {
 $book_query= "INSERT INTO book (c_id, p_id) VALUES ('$c_id','$p_id')";
 $conn->query($book_query);
 $b_id=$conn->insert_id;
-
+$_SESSION['b_id']=$b_id;
 date_default_timezone_set('Asia/Kolkata');
 
 // Get the current time

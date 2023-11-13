@@ -550,25 +550,25 @@
     <h1 class="heading">contact us</h1>
     <div class="row">
 
-        <form id="contact-form" name="contact-form">
+        <form id="contact-form" name="contact-form" action="feedback.php" method="post" >
 
             <div class="inputBox">
-                <input type="text" required>
+                <input type="text" required name="CustomerName">
                 <label>name</label>
             </div>
 
             <div class="inputBox">
-                <input type="email" required>
-                <label>email</label>
+                <input type="number" required name="OrderId">
+                <label>Order ID</label>
             </div>
 
             <div class="inputBox">
-                <input type="number" required>
+                <input type="number">
                 <label>number</label>
             </div>
 
             <div class="inputBox">
-                <textarea required name="" id="" cols="30" rows="10"></textarea>
+                <textarea required name="feedback" id="" cols="30" rows="10"></textarea>
                 <label>message</label>
             </div>
 
