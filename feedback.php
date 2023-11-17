@@ -1,30 +1,49 @@
 <?php
+    include "connect.php";
+
     session_start();
 
-    include "connect.php";
-    // echo"hello";
+    $flag = $_SESSION['flag'];
 
-    if (isset($_POST['OrderId']) && isset($_POST['CustomerName']) && isset($_POST['feedback']))
+    if ($flag === 'c'){
+
+    if (isset($_POST['BID']) && isset($_POST['feedback']))
     {
-        $cid=$_SESSION['id_c'];
-        $bid=$_POST['OrderId'];
-        $fb=$_POST['feedback'];
-        $sql="SELECT b_id FROM book WHERE c_id =  $cid";
-        $result=$conn->query($sql);
-        $row = $result->fetch_assoc();
-        $db_bid = $row['b_id'];
+        $fb = $_POST['feedback'];
+        $bid = $_POST['BID'];
 
-        if($bid === $db_bid)
+        $sql = "SELECT b_id FROM book WHERE b_id = '$bid'  ";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows === 0) 
         {
-            $sql1= "UPDATE `book` SET `feedback` = '$fb' WHERE `book`.`b_id` = $db_bid;";
-            if($conn->query($sql1)=== true)
-            {
-                echo"<script> alert('feedback submitted');window.location.href='homepage1.php';</script>";
-            }
-            else{
-                echo"<script> alert('feedback not submitted');window.location.href='homepage1.php';</script>";
-            }
+            echo '<script>
+            alert(" Please Enter a valid Book ID!");
+            window.location.href = "homepage1.php";
+            </script>';
+
+        }else{
+            $row = $result->fetch_assoc();
+            $bookid = $row['b_id'];
+            $submit_feedback = "INSERT INTO book (b_id, feedback) VALUES ('$bookid','$fb') ON DUPLICATE KEY UPDATE feedback = VALUES(feedback)";
             
+             if ( $conn->query($submit_feedback)){
+            echo '<script>
+            alert("Thanks for your valueable feedback!");
+            window.location.href = "homepage1.php";
+            </script>';
+        } else {
+            echo '<script>
+            alert("there must be something wrong ! ");
+            window.location.href = "homepage1.php";
+            </script>' ;
         }
-    }
+        }
+    } 
+}else{
+    echo '<script>
+    alert("You have to login as a Customer to add your valueable feedback !");
+    window.location.href = "c_log.html";
+    </script>';
+}
 ?>
